@@ -37,11 +37,9 @@ function App() {
     }
 
     try {
-      const response = await axios.post(
-       'https://cv-backend-eiva.onrender.com/api/generate-cv',
-        formData,
-        { headers: { 'Content-Type': 'multipart/form-data' } }
-      )
+      const response = await axios.post('https://cv-backend-eiva.onrender.com/api/generate-cv', formData, {
+  headers: { 'Content-Type': 'multipart/form-data' }
+})
 
       if (response.data.success) {
         setGeneratedCV(response.data.data)
